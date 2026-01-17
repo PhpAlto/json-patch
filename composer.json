@@ -1,0 +1,70 @@
+{
+    "name": "alto/json-patch",
+    "description": "A PHP JSON-Patch library based on RFC 6902 for generating smart diffs, applying patches, and rebuilding data structures.",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "json",
+        "patch",
+        "rfc6902",
+        "diff",
+        "audit",
+        "versioning",
+        "state",
+        "deterministic",
+        "change-tracking",
+        "json-diff"
+    ],
+    "authors": [
+        {
+            "name": "Simon André",
+            "email": "smn.andre@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/phpalto/json-patch",
+    "support": {
+        "issues": "https://github.com/phpalto/json-patch/issues",
+        "docs": "https://github.com/phpalto/json-patch#readme"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/smnandre"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Alto\\JsonPatch\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Alto\\JsonPatch\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@phpstan",
+            "@test"
+        ],
+        "cs-check": "php-cs-fixer fix --dry-run --diff",
+        "cs-fix": "php-cs-fixer fix",
+        "phpstan": "phpstan analyse --level=10",
+        "test": "phpunit"
+    }
+}
